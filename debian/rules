@@ -1,4 +1,28 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
 
+# Use debhelper default for all targets (but some are overridden below).
 %:
 	dh $@
+
+ifeq (,$(filter terse,$(DEB_BUILD_OPTIONS)))
+export VERBOSE=1
+endif
+
+# Enable all hardening options, since we potentially handle untrusted
+# data. Debhelper takes care of calling dpkg-buildflags and exporting
+# all the build flags in the environment automatically.
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# Upstream uses make mrproper, which dh_auto_clean doesn't recognize.
+override_dh_auto_clean:
+	$(MAKE) mrproper
+	# Remove our config file generated in the configure step
+	rm -f Makefile.local
+
+override_dh_auto_configure:
+	# Default is to install to /usr/local
+	echo "prefix=/usr" >> Makefile.local
+	# These will be installed by debhelper
+	echo "DO_NOT_INSTALL_CHANGELOG=1" >> Makefile.local
+	echo "DO_NOT_INSTALL_LICENSE=1" >> Makefile.local

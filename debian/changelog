@@ -1,5 +1,54 @@
-template-repository (1.0-1) unstable; urgency=medium
+catcodec (1.0.5-4) unstable; urgency=medium
 
-  * Initial release
+  * [a3082b7] Update watch file
+  * [96cc3c8] Add upstream metadata
+  * [ed12aac] Bump debhelper version to v13
+  * [bf5d8aa] Support DEB_BUILD_OPTIONS=terse
+  * [d32c018] Bump standards version to 4.6.0
+  * [f9ba32f] Update upstream homepage and contact
+  * [d77b8dd] Set Rules-Requires-Root: no for building
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Tue, 23 Nov 2021 16:33:30 +0100
+
+catcodec (1.0.5-3) unstable; urgency=medium
+
+  * [a90b9ad] Bump debhelper version to v11
+  * [d4a6034] Bump standards version to 4.1.4
+  * [21e21e2] Convert Priority: extra to optional
+  * [8b74098] Mark as Multi-arch: foreign
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 10 May 2018 21:39:54 +0200
+
+catcodec (1.0.5-2) unstable; urgency=medium
+
+  * [fd27464] Update watch file, upstream changed download urls.
+  * [a4ba1da] Use canonical Vcs urls (on anonscm.debian.org).
+  * [e020295] Bump Standards-Version to 3.9.6, no changes required.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 23 Oct 2014 12:28:28 +0200
+
+catcodec (1.0.5-1) unstable; urgency=low
+
+  * [008d309] New upstream release 1.0.5. (Closes: #667128)
+  * [45b02cc] Bump Standards-Version to 3.9.3, no changes required.
+  * [c02cca6] Enable verbose builds.
+  * [8066b72] Raise the debhelper compat level to 9.
+  * [c16b293] Enable all hardening options.
+  * [1fd7580] Add pass-cppflags.patch to make all hardening work.
+  * [8c3bd7a] Update copyright file to use the new copyright-format-1.0.
+  * [6f710c1] Add fix-clean-rev-cpp.patch to fix make clean.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Fri, 06 Apr 2012 11:13:18 +0200
+
+catcodec (1.0.4-1) unstable; urgency=low
+
+  * [482c4b7] New upstream release 1.0.4.
+  * [0ceaa00] Bump Standards-Version to 3.9.2, no changed required.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 04 Aug 2011 21:39:48 +0200
+
+catcodec (1.0.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #568411)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 04 Feb 2010 17:14:26 +0100
