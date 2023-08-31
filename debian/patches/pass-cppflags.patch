@@ -1,0 +1,16 @@
+Author: Matthijs Kooijman <matthijs@stdin.nl>
+Description: Pass CPPFLAGS (C preprocessor flags) from the environment to the C++ compiler.
+ This allows all hardening options to be enabled.
+Forwarded: https://github.com/OpenTTD/catcodec/commit/055e04d5acf704cc58d9692e78a5d509f95285ca
+
+--- a/Makefile
++++ b/Makefile
+@@ -45,7 +45,7 @@
+ objs/%.o: src/%.cpp
+ 	$(Q)mkdir -p objs
+ 	@echo '[CPP] $@'
+-	$(Q)$(CXX) $(CXXFLAGS) -c -o $@ $<
++	$(Q)$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c -o $@ $<
+ 
+ $(CATCODEC): $(OBJS:%=objs/%)
+ 	@echo '[LINK] $@'

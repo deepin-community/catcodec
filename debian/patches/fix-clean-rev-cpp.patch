@@ -1,0 +1,15 @@
+Author: Matthijs Kooijman <matthijs@stdin.nl>
+Description: Fix make clean by removing the right rev.cpp
+Forwarded: https://github.com/OpenTTD/catcodec/commit/7bded96d11c52a15a140c3a504fd0cb73e8b1e14
+
+--- a/Makefile
++++ b/Makefile
+@@ -59,7 +59,7 @@
+ 
+ clean:
+ 	@echo '[CLEAN]'
+-	$(Q)rm -f $(CATCODEC) rev.cpp version.cache
++	$(Q)rm -f $(CATCODEC) src/rev.cpp version.cache
+ 	$(Q)rm -rf objs
+ 
+ mrproper: clean
